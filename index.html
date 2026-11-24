@@ -154,6 +154,15 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 .help{border-left:4px solid var(--accent)}
 @media (prefers-reduced-motion:reduce){.card{transition:none}}
 @media print{header.top.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.tag.eqo{background:transparent;border:1px solid var(--accent);color:var(--accent);font-weight:700}
+.eqv table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:8px}.eqv th,.eqv td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}.eqv th{background:var(--accent-soft);color:var(--accent)}
+.eqv summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.how h3{font:700 1.15rem var(--display);margin:22px 0 8px;color:var(--accent)}
+.how .gtab{border-collapse:collapse;width:100%;font-size:.94rem;background:var(--card,transparent)}
+.how .gtab th,.how .gtab td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+.how .gtab th{background:var(--accent-soft);color:var(--accent)}
+.how .note{font-size:.9rem;color:var(--muted);margin:8px 0 0}
+.how .avoid{margin:6px 0 0;padding-left:20px}.how .avoid li{margin:4px 0}
 </style>
 </head>
 <body>
@@ -161,15 +170,16 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 <header class="top"><div class="hero">
   <h1>Mapa de saberes similares</h1>
   <p class="lead">Explore los 2.637 saberes básicos de Primaria y ESO (Canarias), vea cuáles son similares entre ciclos, cursos y materias, y marque los que podrían compactarse con alumnado con altas capacidades.</p>
-  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.2 · noviembre de 2026</p>
+  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.4 · noviembre de 2026</p>
   <div class="etapas" aria-label="Colores por etapa"><span class="et e1">Primaria</span><span class="et e2">Puente: 5.º-6.º y 1.º ESO</span><span class="et e3">ESO</span></div>
   </div>
-  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y, desde «Mi selección», cópielos o descárguelos en Word, ODT o Excel. Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar.</div>
+  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y, desde «Mi selección», cópielos o descárguelos en Word, ODT o Excel. Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar. Para saber cómo hacerlo, consulte la pestaña «Cómo compactar».</div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="t-exp" aria-selected="true" aria-controls="p-exp">Explorar saberes</button>
     <button class="tab" role="tab" id="t-cor" aria-selected="false" aria-controls="p-cor">Correspondencias</button>
     <button class="tab" role="tab" id="t-map" aria-selected="false" aria-controls="p-map">Mapa de temas</button>
     <button class="tab" role="tab" id="t-sel" aria-selected="false" aria-controls="p-sel">Mi selección<span class="badge-count" id="selCount">0</span></button>
+    <button class="tab" role="tab" id="t-how" aria-selected="false" aria-controls="p-how">Cómo compactar</button>
   </div>
 </header>
 
@@ -198,6 +208,20 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 <section class="panel" id="p-cor" role="tabpanel" aria-labelledby="t-cor">
   <p class="lead">Aquí se ve qué saber corresponde a cuál en otros ciclos, cursos y materias, y con qué criterio de evaluación. Marque lo que se podría compactar desde cualquiera de las tres vistas.</p>
   <div class="help warn"><b>Ojo con los criterios:</b> los decretos no vinculan cada saber con un criterio de evaluación. La vinculación que se muestra aquí es aproximada, por parecido de texto, y no es una correspondencia oficial. Contrástela con la programación didáctica.</div>
+  <details class="help eqv" style="margin-top:12px"><summary>Equivalencia oficial de áreas y materias (Primaria ↔ ESO)</summary>
+    <p style="margin:8px 0 0">Según el documento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación «Equivalencia de las áreas y materias de Educación Infantil, Educación Primaria y Educación Secundaria Obligatoria a tener en cuenta en la realización de Adaptaciones Curriculares».</p>
+    <table><thead><tr><th>Área de Educación Primaria</th><th>Materias de ESO que le corresponden</th></tr></thead><tbody>
+      <tr><td>Conocimiento del Medio Natural, Social y Cultural</td><td>Biología y Geología; Física y Química; Geografía e Historia; Tecnología y Digitalización</td></tr>
+      <tr><td>Educación Artística</td><td>Educación Plástica, Visual y Audiovisual; Música</td></tr>
+      <tr><td>Educación Física</td><td>Educación Física</td></tr>
+      <tr><td>Lengua Castellana y Literatura</td><td>Lengua Castellana y Literatura</td></tr>
+      <tr><td>Lengua Extranjera</td><td>Lengua Extranjera</td></tr>
+      <tr><td>Matemáticas</td><td>Matemáticas</td></tr>
+      <tr><td>Educación en Valores Cívicos y Éticos</td><td>Educación en Valores Cívicos y Éticos</td></tr>
+      <tr><td>Segunda Lengua Extranjera</td><td>Segunda Lengua Extranjera</td></tr>
+    </tbody></table>
+    <p style="margin:8px 0 0">Materias de ESO sin correspondencia en Primaria según ese documento: Trabajo Monográfico, Historia y Geografía de Canarias, Cultura Clásica, Cultura y Ciudadanía Digital y Economía Personal y Social.</p>
+  </details>
   <div class="seg" id="corMode" style="margin-top:12px">
     <button type="button" class="chip" data-mode="tema" aria-pressed="true">Por tema (conceptual)</button>
     <button type="button" class="chip" data-mode="sim" aria-pressed="false">Por similitud del texto</button>
@@ -210,6 +234,59 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 <section class="panel" id="p-map" role="tabpanel" aria-labelledby="t-map">
   <p class="lead">Número de saberes que mencionan cada tema en cada ciclo o curso. Pulse una cifra para ver esos saberes. Los temas presentes en 5 o más niveles se retoman en espiral y son los mejores lugares donde buscar contenidos para compactar.</p>
   <div class="tablewrap" style="margin-top:12px"><table class="heat" id="heat"></table></div>
+</section>
+
+<section class="panel how" id="p-how" role="tabpanel" aria-labelledby="t-how">
+  <p class="lead" style="margin-bottom:12px">Compactar es sustituir los contenidos que el alumnado ya domina por propuestas de enriquecimiento o profundización, sin recortar lo que aún no domina. Esta guía breve resume el procedimiento de compactación del currículo (Reis y Renzulli) y es orientativa: la decisión corresponde al equipo docente, con el apoyo de orientación.</p>
+
+  <h3>Cuatro pasos</h3>
+  <div class="tablewrap"><table class="gtab"><thead><tr><th style="width:4%">#</th><th style="width:24%">Paso</th><th>Qué se hace</th></tr></thead><tbody>
+    <tr><td>1</td><td><b>Definir lo que se espera</b></td><td>Fijar el saber y el criterio de evaluación que se van a trabajar. Los saberes marcados en «Mi selección» son el punto de partida.</td></tr>
+    <tr><td>2</td><td><b>Evaluar antes</b></td><td>Comprobar qué domina ya el alumno o la alumna, antes de empezar la unidad y con instrumentos variados (ver abajo).</td></tr>
+    <tr><td>3</td><td><b>Decidir</b></td><td>Valorar, con los criterios de la tabla siguiente, qué se compacta y qué no.</td></tr>
+    <tr><td>4</td><td><b>Sustituir y registrar</b></td><td>Ofrecer una propuesta alternativa de más profundidad, dejar constancia por escrito y revisarla en una fecha acordada.</td></tr>
+  </tbody></table></div>
+
+  <h3>Evaluación previa: instrumentos</h3>
+  <div class="tablewrap"><table class="gtab"><thead><tr><th style="width:26%">Instrumento</th><th style="width:30%">Qué permite ver</th><th>Ejemplo</th></tr></thead><tbody>
+    <tr><td><b>Prueba inicial breve</b></td><td>Dominio de conceptos y procedimientos</td><td>Cinco o seis tareas del criterio, de dificultad creciente.</td></tr>
+    <tr><td><b>Tarea abierta o mini proyecto</b></td><td>Comprensión y transferencia a situaciones nuevas</td><td>Explicar un fenómeno y aplicarlo a un caso real.</td></tr>
+    <tr><td><b>Conversación o entrevista</b></td><td>Razonamiento, vocabulario y seguridad</td><td>Pedirle que explique cómo lo sabe y qué le gustaría descubrir.</td></tr>
+    <tr><td><b>Trabajos anteriores</b></td><td>Lo que ya se ha trabajado y con qué nivel</td><td>Revisar cuadernos, proyectos o el portfolio del curso previo.</td></tr>
+  </tbody></table></div>
+  <p class="note">El equipo docente fija qué nivel de dominio exigirá para compactar. Muchas guías utilizan resultados muy altos, por ejemplo en torno al 90 %, pero es solo una referencia: conviene valorar también si hay comprensión y no solo aciertos.</p>
+
+  <h3>Criterios para decidir</h3>
+  <div class="tablewrap"><table class="gtab"><thead><tr><th style="width:24%">Señal</th><th style="width:38%">Más favorable a compactar</th><th>Más prudencia</th></tr></thead><tbody>
+    <tr><td><b>Parecido entre niveles</b></td><td>Saberes casi idénticos y con el mismo enfoque en el nivel anterior</td><td>Reformulaciones con más profundidad, o con otro enfoque</td></tr>
+    <tr><td><b>Resultado de la evaluación previa</b></td><td>Dominio claro, con explicación y transferencia</td><td>Aciertos mecánicos o dudas al justificar</td></tr>
+    <tr><td><b>Tipo de saber</b></td><td>Conceptos ya consolidados</td><td>Procedimientos que se automatizan con práctica, y actitudes y valores</td></tr>
+    <tr><td><b>Lugar en la secuencia</b></td><td>Contenido que no es requisito de lo siguiente</td><td>Prerrequisito de unidades posteriores</td></tr>
+    <tr><td><b>Cambio de etapa</b></td><td>Materias equivalentes según la normativa y con textos casi idénticos</td><td>Revisar la profundidad que se pide en ESO antes de compactar</td></tr>
+    <tr><td><b>Bienestar y convivencia</b></td><td>El alumno o la alumna lo desea y sigue integrado en el grupo</td><td>Riesgo de aislamiento o de presión: hablar con la familia y con orientación</td></tr>
+  </tbody></table></div>
+
+  <h3>Ejemplos de enriquecimiento</h3>
+  <div class="tablewrap"><table class="gtab"><thead><tr><th style="width:30%">Si se compacta…</th><th>Propuesta de enriquecimiento (ejemplos)</th></tr></thead><tbody>
+    <tr><td><b>El agua</b> (ciclo del agua, de 5.º-6.º a 1.º ESO)</td><td>Investigar cómo se obtiene y se gestiona el agua en su isla (aguas subterráneas, desalación, depuración), comparar datos y proponer medidas de ahorro para el centro.</td></tr>
+    <tr><td><b>Matemáticas</b>: estrategias de conteo</td><td>Problemas de combinatoria y probabilidad con situaciones reales (organizar un torneo, diseñar claves), simulándolos en una hoja de cálculo.</td></tr>
+    <tr><td><b>Matemáticas</b>: medidas de dispersión</td><td>Diseñar una encuesta, analizar los datos y valorar con espíritu crítico cómo se presentan los gráficos en los medios.</td></tr>
+    <tr><td><b>Lengua</b>: prejuicios y estereotipos lingüísticos</td><td>Proyecto de investigación sobre las variedades del español en Canarias: recoger muestras, analizarlas y presentarlas a la comunidad educativa.</td></tr>
+  </tbody></table></div>
+  <p class="note">Tipos de propuesta: <b>profundizar</b> (más complejidad), <b>ampliar</b> (temas conectados), <b>aplicar</b> (un proyecto real), <b>crear</b> (producir algo para otras personas) y <b>acompañar</b> (mentoría o trabajo con otros niveles).</p>
+
+  <h3>Qué evitar</h3>
+  <ul class="avoid">
+    <li>Dar más tareas del mismo tipo, o solo adelantar contenido sin profundidad.</li>
+    <li>Compactar sin una evaluación previa, o solo por la similitud de los textos.</li>
+    <li>Dejar al alumnado trabajando sin propuesta clara ni seguimiento.</li>
+    <li>Usar el tiempo ganado para que ayude siempre a otros compañeros y compañeras.</li>
+  </ul>
+
+  <h3>Registro y seguimiento</h3>
+  <p>Conviene anotar para cada saber compactado: el criterio, el instrumento y el resultado de la evaluación previa, la propuesta alternativa y la fecha de revisión. «Mi selección» permite añadir una nota a cada saber y descargarla en Word, ODT o Excel, y puede servir como borrador de ese registro. Coordine la decisión con orientación y con la familia.</p>
+
+  <p class="note" style="margin-top:14px"><b>Fuente:</b> Reis, S. M. y Renzulli, J. S. (2005). <i>Curriculum compacting: An easy start to differentiating for high potential students</i>. Prufrock Press; y National Research Center on the Gifted and Talented, Universidad de Connecticut (gifted.uconn.edu/compacting). Los ejemplos son orientativos y de elaboración propia.</p>
 </section>
 
 <section class="panel" id="p-sel" role="tabpanel" aria-labelledby="t-sel">
@@ -232,7 +309,8 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
     <li><b>Vinculación con los criterios de evaluación:</b> los decretos no relacionan cada saber con un criterio concreto. La herramienta muestra los criterios de la misma materia y nivel cuyo texto se parece más, y también el parecido entre saberes y entre criterios, calculado por similitud de texto. Es una ayuda orientativa y no sustituye la lectura del decreto ni la valoración del equipo docente.</li>
     <li><b>Tipografía:</b> la página carga sus fuentes desde Google Fonts. Si el sitio donde se aloje no permite recursos externos, se verá con una tipografía del sistema, sin más cambios.</li>
     <li><b>Similar no significa redundante:</b> muchos saberes reaparecen a propósito, con mayor profundidad. Compactar exige siempre una evaluación previa del alumnado y el criterio profesional del equipo docente.</li>
-    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.2, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
+    <li><b>Equivalencia de áreas y materias:</b> la correspondencia entre áreas de Primaria y materias de ESO que se señala como «equivalencia oficial» procede del documento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación sobre adaptaciones curriculares. Se usa solo para señalar y filtrar; no modifica el parecido de texto.</li>
+    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.4, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
   </ul>
 </footer>
 </div>
@@ -242,7 +320,10 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 <script>
 (function(){
 var D=JSON.parse(document.getElementById('data').textContent);
-var META=D.meta, ITEMS=D.items, NIV=META.niveles, AREAS=META.areas, TEMAS=META.temas;
+var META=D.meta, ITEMS=D.items, NIV=META.niveles, AREAS=META.areas, TEMAS=META.temas,
+    EQO={1:[0,15,16,25],7:[10,22]},
+    eqSet=function(a,on){var r=[a];if(on){Object.keys(EQO).forEach(function(k){k=+k;if(k===a)EQO[k].forEach(function(x){r.push(x)});else if(EQO[k].indexOf(a)>-1)r.push(k)})}return r},
+    officialEq=function(a,b){return a!==b&&((EQO[a]&&EQO[a].indexOf(b)>-1)||(EQO[b]&&EQO[b].indexOf(a)>-1))};
 var CR=D.criterios||[];
 var STORE='saberes-compactar-v1';
 var state={q:'',tema:'',area:'',niv:{},rep:false,ant:false,ord:'cur',limit:40};
@@ -308,7 +389,7 @@ function card(it){
   if(it.th.length){h+='<div class="themes">'+it.th.slice(0,6).map(function(t){return '<button type="button" class="chip small" data-tema="'+t+'">'+esc(TEMAS[t].nombre)+'</button>'}).join('')+'</div>'}
   h+='<div class="actions"><button type="button" class="btn pick" data-pick="'+it.i+'" aria-pressed="'+(picked?'true':'false')+'">'+(picked?'Marcado para compactar ✓':'Marcar para compactar')+'</button></div>';
   if(it.nb.length){h+='<details class="rel"><summary>Antecedentes y continuaciones ('+it.nb.length+')</summary>'+it.nb.map(function(p){var o=ITEMS[p[0]];var dir=o.n<it.n?'Antes':(o.n>it.n?'Después':'Mismo nivel');
-    return '<div class="relitem"><div><div class="dir">'+dir+'</div><div class="sim">'+Math.round(p[1]*100)+' %</div></div><div><b>'+esc(AREAS[o.a])+'</b> · '+esc(NIV[o.n])+'<br>'+esc(o.t)+'</div></div>'}).join('')+'<div class="dir" style="padding-top:6px">El porcentaje indica el parecido del texto, no una equivalencia garantizada.</div></details>'}
+    return '<div class="relitem"><div><div class="dir">'+dir+'</div><div class="sim">'+Math.round(p[1]*100)+' %</div></div><div>'+(officialEq(it.a,o.a)?'<span class="tag eqo">Equivalencia oficial</span> ':'')+'<b>'+esc(AREAS[o.a])+'</b> · '+esc(NIV[o.n])+'<br>'+esc(o.t)+'</div></div>'}).join('')+'<div class="dir" style="padding-top:6px">El porcentaje indica el parecido del texto, no una equivalencia garantizada. «Equivalencia oficial» señala materias que la normativa de adaptaciones curriculares hace corresponder.</div></details>'}
   h+=critBlock(it);
   return h+'</article>';
 }
@@ -475,24 +556,25 @@ $('dlOdt').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay s
   catch(e){toast('No se pudo crear el ODT: use el de Word o copie el texto')}};
 
 // ---- pestañas
-function showTab(k){['exp','cor','map','sel'].forEach(function(x){var on=x===k;$('p-'+x).classList.toggle('on',on);$('t-'+x).setAttribute('aria-selected',on?'true':'false')});
+function showTab(k){['exp','cor','map','sel','how'].forEach(function(x){var on=x===k;$('p-'+x).classList.toggle('on',on);$('t-'+x).setAttribute('aria-selected',on?'true':'false')});
   if(k==='sel')renderSel(); if(k==='cor')corRender()}
-['exp','cor','map','sel'].forEach(function(k){$('t-'+k).onclick=function(){showTab(k)}});
+['exp','cor','map','sel','how'].forEach(function(k){$('t-'+k).onclick=function(){showTab(k)}});
 
 
-var cor={mode:'tema',tema:'',area:'',th:0.88,lim:25,exp:{}};
+var cor={mode:'tema',tema:'',area:'',th:0.88,lim:25,eq:false,exp:{}};
 function selArea(id,val,all){return '<select id="'+id+'"><option value="">'+all+'</option>'+AREAS.map(function(a,i){return '<option value="'+i+'"'+(String(val)===String(i)?' selected':'')+'>'+esc(a)+'</option>'}).join('')+'</select>'}
 function corControls(){
   var h='';
   if(cor.mode==='tema'){
-    h='<div class="row"><div class="field" style="flex:2"><label for="cTema">Tema</label><select id="cTema"><option value="">Elija un tema…</option>'+catNames.map(function(c){return '<optgroup label="'+esc(c)+'">'+TEMAS.map(function(t,ti){return t.cat===c?'<option value="'+ti+'"'+(String(cor.tema)===String(ti)?' selected':'')+'>'+esc(t.nombre)+'</option>':''}).join('')+'</optgroup>'}).join('')+'</select></div><div class="field"><label for="cArea">Solo esta materia</label>'+selArea('cArea',cor.area,'Todas las materias')+'</div></div><div class="help" style="margin:0">Cada fila es una materia y cada columna un ciclo o curso. Un tema que aparece en varias columnas de la misma fila, o en varias filas de la misma columna, es un buen candidato a revisar.</div>';
+    h='<div class="row"><div class="field" style="flex:2"><label for="cTema">Tema</label><select id="cTema"><option value="">Elija un tema…</option>'+catNames.map(function(c){return '<optgroup label="'+esc(c)+'">'+TEMAS.map(function(t,ti){return t.cat===c?'<option value="'+ti+'"'+(String(cor.tema)===String(ti)?' selected':'')+'>'+esc(t.nombre)+'</option>':''}).join('')+'</optgroup>'}).join('')+'</select></div><div class="field"><label for="cArea">Solo esta materia</label>'+selArea('cArea',cor.area,'Todas las materias')+'</div></div><div class="row"><label class="switch"><input type="checkbox" id="cEq"'+(cor.eq?' checked':'')+'> Incluir las materias equivalentes según la normativa (Primaria ↔ ESO)</label></div><div class="help" style="margin:0">Cada fila es una materia y cada columna un ciclo o curso. Un tema que aparece en varias columnas de la misma fila, o en varias filas de la misma columna, es un buen candidato a revisar.</div>';
   } else if(cor.mode==='sim'){
-    h='<div class="row"><div class="field"><label for="cArea">Materia</label>'+selArea('cArea',cor.area,'Todas las materias')+'</div><div class="field" style="flex:2"><label for="cTh">Parecido mínimo del texto: <b id="cThV">'+Math.round(cor.th*100)+' %</b></label><div class="slider"><span>50 %</span><input type="range" id="cTh" min="0.5" max="1" step="0.02" value="'+cor.th+'"><span>100 %</span></div></div></div><div class="help" style="margin:0">A partir de 88 % los saberes son casi idénticos. Por debajo aparecen reformulaciones del mismo contenido. Solo se muestran saberes de niveles o materias distintos.</div>';
+    h='<div class="row"><div class="field"><label for="cArea">Materia</label>'+selArea('cArea',cor.area,'Todas las materias')+'</div><div class="field" style="flex:2"><label for="cTh">Parecido mínimo del texto: <b id="cThV">'+Math.round(cor.th*100)+' %</b></label><div class="slider"><span>50 %</span><input type="range" id="cTh" min="0.5" max="1" step="0.02" value="'+cor.th+'"><span>100 %</span></div></div></div><div class="row"><label class="switch"><input type="checkbox" id="cEq"'+(cor.eq?' checked':'')+'> Incluir las materias equivalentes según la normativa (Primaria ↔ ESO)</label></div><div class="help" style="margin:0">A partir de 88 % los saberes son casi idénticos. Por debajo aparecen reformulaciones del mismo contenido. Solo se muestran saberes de niveles o materias distintos.</div>';
   } else {
-    h='<div class="row"><div class="field"><label for="cArea">Materia</label>'+selArea('cArea',cor.area,'Elija una materia…')+'</div></div><div class="help" style="margin:0">Lista los criterios de evaluación de la materia por nivel y, bajo cada uno, el criterio más parecido en otros niveles. Si dos criterios casi coinciden, el nivel de logro esperado apenas cambia.</div>';
+    h='<div class="row"><div class="field"><label for="cArea">Materia</label>'+selArea('cArea',cor.area,'Elija una materia…')+'</div></div><div class="row"><label class="switch"><input type="checkbox" id="cEq"'+(cor.eq?' checked':'')+'> Incluir las materias equivalentes según la normativa (Primaria ↔ ESO)</label></div><div class="help" style="margin:0">Lista los criterios de evaluación de la materia por nivel y, bajo cada uno, el criterio más parecido en otros niveles. Si dos criterios casi coinciden, el nivel de logro esperado apenas cambia.</div>';
   }
   $('corControls').innerHTML=h;
   var a=$('cArea'); if(a)a.onchange=function(){cor.area=this.value;cor.lim=25;corRender()};
+  var eq=$('cEq'); if(eq)eq.onchange=function(){cor.eq=this.checked;cor.lim=25;corRender()};
   var t=$('cTema'); if(t)t.onchange=function(){cor.tema=this.value;cor.exp={};corRender()};
   var s=$('cTh'); if(s){s.oninput=function(){cor.th=parseFloat(this.value);$('cThV').textContent=Math.round(cor.th*100)+' %'};s.onchange=function(){cor.lim=25;corRender()}}
 }
@@ -502,7 +584,7 @@ function short(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
 function corTema(){
   var out=$('corOut'); if(cor.tema===''){out.innerHTML='<div class="empty">Elija un tema para ver en qué materias y niveles aparece.</div>';return}
   var tid=parseInt(cor.tema,10);
-  var its=ITEMS.filter(function(it){return it.th.indexOf(tid)>=0&&(cor.area===''||it.a===parseInt(cor.area,10))});
+  var its=ITEMS.filter(function(it){return it.th.indexOf(tid)>=0&&(cor.area===''||eqSet(parseInt(cor.area,10),cor.eq).indexOf(it.a)>-1)});
   if(!its.length){out.innerHTML='<div class="empty">No hay saberes con ese tema en esa materia.</div>';return}
   var byA={}; its.forEach(function(it){(byA[it.a]=byA[it.a]||[]).push(it)});
   var ar=Object.keys(byA).map(Number).sort(function(x,y){return x-y});
@@ -530,17 +612,18 @@ function corSim(){
   ITEMS.forEach(function(it){par[it.i]=it.i});
   ITEMS.forEach(function(it){it.nb.forEach(function(p){var o=ITEMS[p[0]]; if(p[1]>=th&&!(o.a===it.a&&o.n===it.n)){var x=f(it.i),y=f(o.i);if(x!==y)par[x]=y}})});
   var g={}; ITEMS.forEach(function(it){var r=f(it.i);(g[r]=g[r]||[]).push(it)});
-  var af=cor.area===''?null:parseInt(cor.area,10);
+  var af=cor.area===''?null:eqSet(parseInt(cor.area,10),cor.eq);
   var groups=Object.keys(g).map(function(k){return g[k]}).filter(function(m){
     if(m.length<2)return false; var places={}; m.forEach(function(x){places[x.a+'-'+x.n]=1}); if(Object.keys(places).length<2)return false;
-    return af===null||m.some(function(x){return x.a===af})});
+    return af===null||m.some(function(x){return af.indexOf(x.a)>-1})});
   groups.forEach(function(m){m.sort(function(x,y){return (x.n-y.n)||(x.a-y.a)||(x.i-y.i)})});
   groups.sort(function(x,y){return (y.length-x.length)||(x[0].i-y[0].i)});
   if(!groups.length){out.innerHTML='<div class="empty">No hay saberes tan parecidos con ese umbral. Baje el porcentaje.</div>';return}
   var h='<p class="summary"><span><strong>'+groups.length+'</strong> grupos de saberes parecidos (≥ '+Math.round(th*100)+' %)</span></p>';
   groups.slice(0,cor.lim).forEach(function(m,gi){
     var minN=m[0].n, rest=m.filter(function(x){return x.n>minN}).map(function(x){return x.i});
-    h+='<article class="grp"><div class="meta"><span class="tag rep">Aparece en '+m.length+' lugares</span><span class="dir">Desde '+esc(NIV[minN])+'</span></div>';
+    var hasEq=m.some(function(x){return m.some(function(y){return officialEq(x.a,y.a)})});
+    h+='<article class="grp"><div class="meta"><span class="tag rep">Aparece en '+m.length+' lugares</span>'+(hasEq?'<span class="tag eqo">Incluye materias equivalentes (normativa)</span>':'')+'<span class="dir">Desde '+esc(NIV[minN])+'</span></div>';
     m.forEach(function(it,k){var p=sel.hasOwnProperty(it.i);
       h+='<div class="mem"><div class="meta"><span class="tag">'+esc(AREAS[it.a])+'</span><span class="tag niv n'+it.n+'">'+esc(NIV[it.n])+'</span>'+(it.n===minN?'<span class="tag org">Origen</span>':'<span class="tag rep">Posible compactación</span>')+'</div><p class="txt">'+esc(it.t)+'</p><div class="actions">'+pickBtn(it)+'</div>'+critBlock(it)+'</div>'});
     if(rest.length) h+='<div class="actions"><button type="button" class="btn primary" data-grouppick="'+rest.join(',')+'">Marcar los '+rest.length+' similares y dejar el origen</button></div>';
@@ -552,12 +635,12 @@ function corSim(){
 }
 function corCrit(){
   var out=$('corOut'); if(cor.area===''){out.innerHTML='<div class="empty">Elija una materia para comparar sus criterios entre niveles.</div>';return}
-  var a=parseInt(cor.area,10), list=CR.filter(function(c){return c.a===a}).sort(function(x,y){return (x.n-y.n)||(x.v>y.v?1:-1)||(parseFloat(x.num)-parseFloat(y.num))});
+  var a=parseInt(cor.area,10), aset=eqSet(a,cor.eq), list=CR.filter(function(c){return aset.indexOf(c.a)>-1}).sort(function(x,y){return (x.n-y.n)||(x.a-y.a)||(x.v>y.v?1:-1)||(parseFloat(x.num)-parseFloat(y.num))});
   if(!list.length){out.innerHTML='<div class="empty">No hay criterios para esa materia.</div>';return}
-  var h='<p class="summary"><span><strong>'+list.length+'</strong> criterios en <strong>'+AREAS[a]+'</strong></span></p>',last=-1;
+  var h='<p class="summary"><span><strong>'+list.length+'</strong> criterios en <strong>'+AREAS[a]+'</strong>'+(aset.length>1?' y materias equivalentes':'')+'</span></p>',last=-1;
   list.forEach(function(c){
     if(c.n!==last){h+='<h3 style="font:700 1.1rem var(--display);margin:18px 0 8px">'+esc(NIV[c.n])+'</h3>';last=c.n}
-    h+='<article class="card"><div class="meta"><span class="tag">Criterio '+esc(c.num)+'</span>'+(c.v?'<span class="tag niv">Itinerario '+c.v+'</span>':'')+'</div>'+(c.ce?'<div class="dir">Competencia específica: '+esc(short(c.ce,170))+'</div>':'')+'<p class="txt">'+esc(c.t)+'</p>'+
+    h+='<article class="card"><div class="meta">'+(aset.length>1?'<span class="tag">'+esc(AREAS[c.a])+'</span>':'')+'<span class="tag">Criterio '+esc(c.num)+'</span>'+(c.v?'<span class="tag niv">Itinerario '+c.v+'</span>':'')+'</div>'+(c.ce?'<div class="dir">Competencia específica: '+esc(short(c.ce,170))+'</div>':'')+'<p class="txt">'+esc(c.t)+'</p>'+
       (c.nb&&c.nb.length?'<details class="rel" open><summary>Criterio parecido en otros niveles ('+c.nb.length+')</summary>'+c.nb.map(function(p){var o=CR[p[0]];return '<div class="relitem"><div><div class="dir">'+(o.n<c.n?'Antes':'Después')+'</div><div class="sim">'+Math.round(p[1]*100)+' %</div></div><div><b>'+esc(NIV[o.n])+'</b> · criterio '+esc(o.num)+'<br>'+esc(o.t)+'</div></div>'}).join('')+'</details>':'<div class="dir">Sin criterio claramente parecido en otros niveles.</div>')+'</article>';
   });
   out.innerHTML=h;
