@@ -125,15 +125,51 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 .help.warn{margin-top:10px;border-left:4px solid #b8860b;background:#fbf3dc}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
 @media (max-width:520px){.tab{padding:9px 10px}}
+
+/* v1.2: cabecera, cifras, colores por etapa y tarjetas */
+:root{--e1:#2f7a3d;--e1s:#dff0e2;--e2:#6b4fa3;--e2s:#e9e2f6;--e3:#2a5fa8;--e3s:#dde8f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--e1:#7fcf8c;--e1s:#1d3a24;--e2:#b9a2ee;--e2s:#2f2650;--e3:#8db8f0;--e3s:#1b3150}}
+:root[data-theme="dark"]{--e1:#7fcf8c;--e1s:#1d3a24;--e2:#b9a2ee;--e2s:#2f2650;--e3:#8db8f0;--e3s:#1b3150}
+.hero{margin-top:0;padding:26px 24px 22px;border-radius:16px;background:linear-gradient(135deg,#0a4743 0%,#0e6b66 62%,#2a8a7f 100%);color:#fff;box-shadow:0 6px 18px rgba(10,71,67,.22)}
+.hero h1{color:#fff;font-size:clamp(1.7rem,4.4vw,2.5rem)}
+.hero .lead{color:rgba(255,255,255,.9)}
+.hero .by{color:rgba(255,255,255,.75);margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:18px}
+.kpi{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:10px 14px}
+.kpi b{display:block;font:700 1.7rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.85rem;color:rgba(255,255,255,.88)}
+.etapas{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:.82rem}
+.et{padding:2px 11px;border-radius:99px;font-weight:700;background:#fff}
+.et.e1{color:#2f7a3d}.et.e2{color:#6b4fa3}.et.e3{color:#2a5fa8}
+.tag.niv.n0,.tag.niv.n1{background:var(--e1s);color:var(--e1);font-weight:700;border-color:transparent}
+.tag.niv.n2,.tag.niv.n3{background:var(--e2s);color:var(--e2);font-weight:700;border-color:transparent}
+.tag.niv.n4,.tag.niv.n5,.tag.niv.n6{background:var(--e3s);color:var(--e3);font-weight:700;border-color:transparent}
+.chip.n0::before,.chip.n1::before,.chip.n2::before,.chip.n3::before,.chip.n4::before,.chip.n5::before,.chip.n6::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.chip.n0::before,.chip.n1::before{background:var(--e1)}
+.chip.n2::before,.chip.n3::before{background:var(--e2)}
+.chip.n4::before,.chip.n5::before,.chip.n6::before{background:var(--e3)}
+.chip[aria-pressed="true"]::before{box-shadow:0 0 0 2px #fff}
+.card{padding:14px 18px;box-shadow:0 1px 2px rgba(23,48,47,.06);transition:box-shadow .15s}
+.card:hover{box-shadow:0 4px 12px rgba(23,48,47,.12)}
+.help{border-left:4px solid var(--accent)}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+@media print{header.top.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top">
+<header class="top"><div class="hero">
   <h1>Mapa de saberes similares</h1>
   <p class="lead">Explore los 2.637 saberes básicos de Primaria y ESO (Canarias), vea cuáles son similares entre ciclos, cursos y materias, y marque los que podrían compactarse con alumnado con altas capacidades.</p>
-  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.1 · noviembre de 2026</p>
-  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y cópielos desde «Mi selección». Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar.</div>
+  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.2 · noviembre de 2026</p>
+  <div class="kpis" role="list">
+    <div class="kpi" role="listitem"><b>2.637</b><span>saberes básicos</span></div>
+    <div class="kpi" role="listitem"><b>1.052</b><span>criterios de evaluación</span></div>
+    <div class="kpi" role="listitem"><b>394</b><span>grupos de saberes casi idénticos</span></div>
+  </div>
+  <div class="etapas" aria-label="Colores por etapa"><span class="et e1">Primaria</span><span class="et e2">Puente: 5.º-6.º y 1.º ESO</span><span class="et e3">ESO</span></div>
+  </div>
+  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y, desde «Mi selección», cópielos o descárguelos en Word, ODT o Excel. Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar.</div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="t-exp" aria-selected="true" aria-controls="p-exp">Explorar saberes</button>
     <button class="tab" role="tab" id="t-cor" aria-selected="false" aria-controls="p-cor">Correspondencias</button>
@@ -143,6 +179,7 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 </header>
 
 <section class="panel on" id="p-exp" role="tabpanel" aria-labelledby="t-exp">
+  <p class="lead" style="margin-bottom:12px">Busque saberes por palabra, tema, materia o ciclo/curso. En cada uno puede abrir «Antecedentes y continuaciones» para ver dónde reaparece algo similar y «Criterios de evaluación afines» para ver el criterio aproximado. Con «Marcar para compactar» lo añade a «Mi selección», desde donde podrá copiarlo o descargarlo en Word, ODT o Excel.</p>
   <div class="filters">
     <div class="row">
       <div class="field" style="flex:2"><label for="q">Buscar en el texto del saber</label><input type="search" id="q" placeholder="Por ejemplo: agua, energía, puntuación"></div>
@@ -181,8 +218,12 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 </section>
 
 <section class="panel" id="p-sel" role="tabpanel" aria-labelledby="t-sel">
+  <p class="lead" style="margin-bottom:12px">Aquí aparecen los saberes que ha marcado, agrupados por materia. Puede añadir una nota a cada uno y copiar o descargar la selección en Word, ODT o Excel. Las marcas y notas se guardan solo en este navegador.</p>
   <div class="row" style="margin-bottom:10px">
-    <button class="btn primary" id="copyTxt">Copiar como texto</button>
+    <button class="btn primary" id="dlDoc">Descargar documento (Word)</button>
+    <button class="btn primary" id="dlOdt">Descargar documento (ODT)</button>
+    <button class="btn primary" id="dlCsv">Descargar tabla (Excel)</button>
+    <button class="btn" id="copyTxt">Copiar como texto</button>
     <button class="btn" id="copyTsv">Copiar como tabla (para Excel o Sheets)</button>
     <button class="btn ghost" id="clearSel">Vaciar selección</button>
   </div>
@@ -192,11 +233,11 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
   <h2>Notas de uso y fuentes</h2>
   <ul>
     <li><b>Origen de los datos:</b> los saberes básicos y los criterios de evaluación proceden de dos textos públicos: el Decreto 211/2022, de 10 de noviembre, por el que se establece la ordenación y el currículo de la Educación Primaria en la Comunidad Autónoma de Canarias (BOC n.º 231, 23 de noviembre de 2022), y el Decreto 30/2023, de 16 de marzo, por el que se establece la ordenación y el currículo de la Educación Secundaria Obligatoria y del Bachillerato en la Comunidad Autónoma de Canarias (BOC n.º 58, 23 de marzo de 2023). Solo se han analizado los saberes de Primaria y de ESO.</li>
-    <li><b>Marcas y notas:</b> se guardan únicamente en el navegador de cada persona y no se comparten entre usuarios ni entre dispositivos. Para conservarlas, cópienlas desde «Mi selección».</li>
+    <li><b>Marcas y notas:</b> se guardan únicamente en el navegador de cada persona y no se comparten entre usuarios ni entre dispositivos. Para conservarlas, cópienlas o descárguenlas desde «Mi selección».</li>
     <li><b>Vinculación con los criterios de evaluación:</b> los decretos no relacionan cada saber con un criterio concreto. La herramienta muestra los criterios de la misma materia y nivel cuyo texto se parece más, y también el parecido entre saberes y entre criterios, calculado por similitud de texto. Es una ayuda orientativa y no sustituye la lectura del decreto ni la valoración del equipo docente.</li>
     <li><b>Tipografía:</b> la página carga sus fuentes desde Google Fonts. Si el sitio donde se aloje no permite recursos externos, se verá con una tipografía del sistema, sin más cambios.</li>
     <li><b>Similar no significa redundante:</b> muchos saberes reaparecen a propósito, con mayor profundidad. Compactar exige siempre una evaluación previa del alumnado y el criterio profesional del equipo docente.</li>
-    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.1, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
+    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.2, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
   </ul>
 </footer>
 </div>
@@ -224,7 +265,7 @@ var sT=$('fTema'); sT.innerHTML='<option value="">Todos los temas</option>';
 catNames.forEach(function(c){var g=document.createElement('optgroup');g.label=c;
   TEMAS.forEach(function(t,ti){if(t.cat===c){var o=document.createElement('option');o.value=ti;o.textContent=t.nombre;g.appendChild(o)}});sT.appendChild(g)});
 var sA=$('fArea'); sA.innerHTML='<option value="">Todas las áreas y materias</option>'+AREAS.map(function(a,i){return '<option value="'+i+'">'+esc(a)+'</option>'}).join('');
-var cn=$('fNivel'); NIV.forEach(function(n,i){var b=document.createElement('button');b.className='chip';b.type='button';b.setAttribute('aria-pressed','false');b.textContent=n;b.onclick=function(){state.niv[i]=!state.niv[i];b.setAttribute('aria-pressed',state.niv[i]?'true':'false');state.limit=40;render()};cn.appendChild(b)});
+var cn=$('fNivel'); NIV.forEach(function(n,i){var b=document.createElement('button');b.className='chip n'+i;b.type='button';b.setAttribute('aria-pressed','false');b.textContent=n;b.onclick=function(){state.niv[i]=!state.niv[i];b.setAttribute('aria-pressed',state.niv[i]?'true':'false');state.limit=40;render()};cn.appendChild(b)});
 $('q').oninput=function(){state.q=norm(this.value.trim());state.limit=40;render()};
 sT.onchange=function(){state.tema=this.value;state.limit=40;render()};
 sA.onchange=function(){state.area=this.value;state.limit=40;render()};
@@ -265,7 +306,7 @@ function critBlock(it){
 function card(it){
   var picked=sel.hasOwnProperty(it.i);
   var h='<article class="card'+(it.r>1?' rep':'')+(picked?' picked':'')+'" data-id="'+it.i+'">';
-  h+='<div class="meta"><span class="tag">'+esc(AREAS[it.a])+'</span><span class="tag niv">'+esc(NIV[it.n])+(it.v?' · itinerario '+it.v:'')+'</span>';
+  h+='<div class="meta"><span class="tag">'+esc(AREAS[it.a])+'</span><span class="tag niv n'+it.n+'">'+esc(NIV[it.n])+(it.v?' · itinerario '+it.v:'')+'</span>';
   if(it.ro===2) h+='<span class="tag rep">Similar en '+it.r+' lugares</span>';
   if(it.ro===1) h+='<span class="tag org">Origen · similar en '+(it.r-1)+' lugares más</span>';
   h+='</div><p class="txt">'+esc(it.t)+'</p>';
@@ -331,7 +372,7 @@ function renderSel(){
   var h='',last=-1;
   arr.forEach(function(it){
     if(it.a!==last){ if(last!==-1)h+='</div>'; h+='<div class="sel-group"><h3>'+esc(AREAS[it.a])+'</h3>'; last=it.a}
-    h+='<article class="card picked" style="margin-bottom:10px"><div class="meta"><span class="tag niv">'+esc(NIV[it.n])+'</span>'+(it.r>1?'<span class="tag rep">Similar en '+it.r+' lugares</span>':'')+'</div><p class="txt">'+esc(it.t)+'</p>'
+    h+='<article class="card picked" style="margin-bottom:10px"><div class="meta"><span class="tag niv n'+it.n+'">'+esc(NIV[it.n])+'</span>'+(it.r>1?'<span class="tag rep">Similar en '+it.r+' lugares</span>':'')+'</div><p class="txt">'+esc(it.t)+'</p>'
       +critBlock(it)+'<label class="lbl" for="n'+it.i+'">Nota (qué se compacta y con qué se sustituye)</label><textarea class="noteArea" id="n'+it.i+'" data-note="'+it.i+'">'+esc(sel[it.i]||'')+'</textarea>'
       +'<div class="actions"><button type="button" class="btn ghost" data-rm="'+it.i+'">Quitar</button></div></article>';
   });
@@ -354,6 +395,89 @@ $('copyTsv').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay
   var out='Área o materia\tNivel\tSaber\tSimilar en (lugares)\tCriterio afín (aprox.)\tNota\n';
   arr.forEach(function(it){out+=[AREAS[it.a],NIV[it.n],it.t.replace(/\s+/g,' '),it.r>1?it.r:'',(it.cr.length?CR[it.cr[0][0]].num+': '+CR[it.cr[0][0]].t:''),(sel[it.i]||'').replace(/\s+/g,' ')].join('\t')+'\n'});
   copy(out)};
+
+// ---- descargas de «Mi selección»
+function download(name,mime,content){
+  try{var b=new Blob([content],{type:mime}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u)},1500);toast('Descarga iniciada')}
+  catch(e){toast('No se pudo descargar: use «Copiar»')}
+}
+function hoy(){try{return new Date().toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'})}catch(e){return ''}}
+$('dlDoc').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay saberes marcados');return}
+  var h='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Saberes marcados para compactar</title>'
+   +'<style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#17302f}h1{font-size:18pt;color:#0e6b66}h2{font-size:13pt;color:#0e6b66;margin-top:18pt}table{border-collapse:collapse;width:100%}th,td{border:1px solid #9bb3b0;padding:5pt;vertical-align:top;font-size:10pt}th{background:#dcefed;text-align:left}.s{font-size:9pt;color:#5b6f6e}</style></head><body>'
+   +'<h1>Saberes marcados para compactar</h1><p class="s">Elaborado con el Mapa de saberes similares · Equipo Especializado en Altas Capacidades de Canarias'+(hoy()?' · '+hoy():'')+'</p>'
+   +'<p class="s">Selección orientativa. Compactar exige una evaluación previa del alumnado. El criterio afín se ha vinculado por parecido de texto y es aproximado.</p>';
+  var last=-1,open_=false;
+  arr.forEach(function(it){
+    if(it.a!==last){if(open_)h+='</table>';h+='<h2>'+esc(AREAS[it.a])+'</h2><table><tr><th style="width:15%">Nivel</th><th>Saber</th><th style="width:22%">Criterio afín (aprox.)</th><th style="width:18%">Nota</th></tr>';last=it.a;open_=true}
+    h+='<tr><td>'+esc(NIV[it.n])+(it.v?' · itinerario '+esc(it.v):'')+'</td><td>'+esc(it.t)+(it.r>1?'<br><span class="s">Similar en '+it.r+' lugares</span>':'')+'</td><td>'+(it.cr.length?esc(CR[it.cr[0][0]].num+': '+CR[it.cr[0][0]].t):'')+'</td><td>'+esc(sel[it.i]||'')+'</td></tr>'});
+  if(open_)h+='</table>';
+  h+='<p class="s" style="margin-top:14pt">Fuentes: Decreto 211/2022 (Educación Primaria) y Decreto 30/2023 (ESO), Comunidad Autónoma de Canarias.</p></body></html>';
+  download('saberes-a-compactar.doc','application/msword;charset=utf-8','﻿'+h)};
+$('dlCsv').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay saberes marcados');return}
+  function q(v){return '"'+String(v==null?'':v).replace(/\s+/g,' ').replace(/"/g,'""')+'"'}
+  var out=['Área o materia','Nivel','Saber','Similar en (lugares)','Criterio afín (aprox.)','Nota'].map(q).join(';')+'\r\n';
+  arr.forEach(function(it){out+=[AREAS[it.a],NIV[it.n]+(it.v?' · itinerario '+it.v:''),it.t,it.r>1?it.r:'',(it.cr.length?CR[it.cr[0][0]].num+': '+CR[it.cr[0][0]].t:''),sel[it.i]||''].map(q).join(';')+'\r\n'});
+  download('saberes-a-compactar.csv','text/csv;charset=utf-8','﻿'+out)};
+
+// ---- ODT real (zip sin compresión, hecho a mano)
+var CRCT=(function(){var t=[],c,n,k;for(n=0;n<256;n++){c=n;for(k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(u){var c=0xFFFFFFFF;for(var i=0;i<u.length;i++)c=CRCT[(c^u[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0}
+function zipStore(files){
+  var enc=new TextEncoder(),parts=[],cd=[],off=0;
+  function u16(v){return [v&255,(v>>>8)&255]}
+  function u32(v){return [v&255,(v>>>8)&255,(v>>>16)&255,(v>>>24)&255]}
+  files.forEach(function(f){
+    var nm=enc.encode(f.name),d=enc.encode(f.data),crc=crc32(d);
+    var lh=[].concat(u32(0x04034b50),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(crc),u32(d.length),u32(d.length),u16(nm.length),u16(0));
+    parts.push(new Uint8Array(lh),nm,d);
+    cd.push({nm:nm,crc:crc,len:d.length,off:off});
+    off+=lh.length+nm.length+d.length});
+  var cdStart=off,cdLen=0;
+  cd.forEach(function(e){
+    var h=[].concat(u32(0x02014b50),u16(20),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(e.crc),u32(e.len),u32(e.len),u16(e.nm.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(e.off));
+    parts.push(new Uint8Array(h),e.nm);cdLen+=h.length+e.nm.length});
+  parts.push(new Uint8Array([].concat(u32(0x06054b50),u16(0),u16(0),u16(cd.length),u16(cd.length),u32(cdLen),u32(cdStart),u16(0))));
+  return new Blob(parts,{type:'application/vnd.oasis.opendocument.text'});
+}
+function xe(v){return String(v==null?'':v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+$('dlOdt').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay saberes marcados');return}
+  var NS='xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"';
+  var auto='<office:automatic-styles>'
+   +'<style:style style:name="TC" style:family="table-column"><style:table-column-properties style:column-width="3.2cm"/></style:style>'
+   +'<style:style style:name="TS" style:family="table-column"><style:table-column-properties style:column-width="6.8cm"/></style:style>'
+   +'<style:style style:name="TK" style:family="table-column"><style:table-column-properties style:column-width="6.4cm"/></style:style>'
+   +'<style:style style:name="TN" style:family="table-column"><style:table-column-properties style:column-width="2.4cm"/></style:style>'
+   +'<style:style style:name="Tab" style:family="table"><style:table-properties style:width="18cm" table:align="margins"/></style:style>'
+   +'<style:style style:name="Cel" style:family="table-cell"><style:table-cell-properties fo:padding="0.12cm" fo:border="0.5pt solid #9bb3b0"/></style:style>'
+   +'<style:style style:name="Cab" style:family="table-cell"><style:table-cell-properties fo:padding="0.12cm" fo:border="0.5pt solid #9bb3b0" fo:background-color="#dcefed"/></style:style>'
+   +'<style:style style:name="Peq" style:family="paragraph"><style:paragraph-properties fo:margin-top="0.15cm"/><style:text-properties fo:font-size="9pt" fo:color="#5b6f6e"/></style:style>'
+   +'<style:style style:name="Neg" style:family="paragraph"><style:text-properties fo:font-weight="bold" fo:font-size="10pt"/></style:style>'
+   +'<style:style style:name="Txt" style:family="paragraph"><style:text-properties fo:font-size="10pt"/></style:style>'
+   +'</office:automatic-styles>';
+  var b='<text:h text:style-name="Heading_20_1" text:outline-level="1">Saberes marcados para compactar</text:h>'
+   +'<text:p text:style-name="Peq">Elaborado con el Mapa de saberes similares · Equipo Especializado en Altas Capacidades de Canarias'+(hoy()?' · '+xe(hoy()):'')+'</text:p>'
+   +'<text:p text:style-name="Peq">Selección orientativa. Compactar exige una evaluación previa del alumnado. El criterio afín se ha vinculado por parecido de texto y es aproximado.</text:p>';
+  var last=-1,open_=false;
+  function cell(st,t,ps){return '<table:table-cell table:style-name="'+st+'" office:value-type="string"><text:p text:style-name="'+(ps||'Txt')+'">'+xe(t)+'</text:p></table:table-cell>'}
+  arr.forEach(function(it){
+    if(it.a!==last){if(open_)b+='</table:table>';
+      b+='<text:h text:style-name="Heading_20_2" text:outline-level="2">'+xe(AREAS[it.a])+'</text:h><table:table table:style-name="Tab"><table:table-column table:style-name="TN"/><table:table-column table:style-name="TS"/><table:table-column table:style-name="TK"/><table:table-column table:style-name="TN"/>'
+       +'<table:table-header-rows><table:table-row>'+cell('Cab','Nivel','Neg')+cell('Cab','Saber','Neg')+cell('Cab','Criterio afín (aprox.)','Neg')+cell('Cab','Nota','Neg')+'</table:table-row></table:table-header-rows>';
+      last=it.a;open_=true}
+    b+='<table:table-row>'+cell('Cel',NIV[it.n]+(it.v?' · itinerario '+it.v:''))+cell('Cel',it.t+(it.r>1?' (similar en '+it.r+' lugares)':''))+cell('Cel',it.cr.length?CR[it.cr[0][0]].num+': '+CR[it.cr[0][0]].t:'')+cell('Cel',sel[it.i]||'')+'</table:table-row>'});
+  if(open_)b+='</table:table>';
+  b+='<text:p text:style-name="Peq">Fuentes: Decreto 211/2022 (Educación Primaria) y Decreto 30/2023 (ESO), Comunidad Autónoma de Canarias.</text:p>';
+  var content='<?xml version="1.0" encoding="UTF-8"?><office:document-content '+NS+' office:version="1.2">'+auto+'<office:body><office:text>'+b+'</office:text></office:body></office:document-content>';
+  var styles='<?xml version="1.0" encoding="UTF-8"?><office:document-styles '+NS+' office:version="1.2"><office:styles>'
+   +'<style:default-style style:family="paragraph"><style:text-properties style:font-name="Liberation Sans" fo:font-size="11pt" fo:language="es" fo:country="ES"/></style:default-style>'
+   +'<style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="paragraph"><style:paragraph-properties fo:margin-bottom="0.2cm"/><style:text-properties fo:font-size="18pt" fo:font-weight="bold" fo:color="#0e6b66"/></style:style>'
+   +'<style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph"><style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.2cm" fo:keep-with-next="always"/><style:text-properties fo:font-size="13pt" fo:font-weight="bold" fo:color="#0e6b66"/></style:style>'
+   +'</office:styles></office:document-styles>';
+  var manifest='<?xml version="1.0" encoding="UTF-8"?><manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2"><manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.text"/><manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/><manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/></manifest:manifest>';
+  try{var blob=zipStore([{name:'mimetype',data:'application/vnd.oasis.opendocument.text'},{name:'META-INF/manifest.xml',data:manifest},{name:'content.xml',data:content},{name:'styles.xml',data:styles}]);
+    var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='saberes-a-compactar.odt';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u)},1500);toast('Descarga iniciada')}
+  catch(e){toast('No se pudo crear el ODT: use el de Word o copie el texto')}};
 
 // ---- pestañas
 function showTab(k){['exp','cor','map','sel'].forEach(function(x){var on=x===k;$('p-'+x).classList.toggle('on',on);$('t-'+x).setAttribute('aria-selected',on?'true':'false')});
@@ -423,7 +547,7 @@ function corSim(){
     var minN=m[0].n, rest=m.filter(function(x){return x.n>minN}).map(function(x){return x.i});
     h+='<article class="grp"><div class="meta"><span class="tag rep">Aparece en '+m.length+' lugares</span><span class="dir">Desde '+esc(NIV[minN])+'</span></div>';
     m.forEach(function(it,k){var p=sel.hasOwnProperty(it.i);
-      h+='<div class="mem"><div class="meta"><span class="tag">'+esc(AREAS[it.a])+'</span><span class="tag niv">'+esc(NIV[it.n])+'</span>'+(it.n===minN?'<span class="tag org">Origen</span>':'<span class="tag rep">Posible compactación</span>')+'</div><p class="txt">'+esc(it.t)+'</p><div class="actions">'+pickBtn(it)+'</div>'+critBlock(it)+'</div>'});
+      h+='<div class="mem"><div class="meta"><span class="tag">'+esc(AREAS[it.a])+'</span><span class="tag niv n'+it.n+'">'+esc(NIV[it.n])+'</span>'+(it.n===minN?'<span class="tag org">Origen</span>':'<span class="tag rep">Posible compactación</span>')+'</div><p class="txt">'+esc(it.t)+'</p><div class="actions">'+pickBtn(it)+'</div>'+critBlock(it)+'</div>'});
     if(rest.length) h+='<div class="actions"><button type="button" class="btn primary" data-grouppick="'+rest.join(',')+'">Marcar los '+rest.length+' similares y dejar el origen</button></div>';
     h+='</article>';
   });
