@@ -121,6 +121,8 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 .foot h2{font:700 1.05rem var(--display);color:var(--ink);margin:0 0 8px}
 .foot ul{margin:0;padding-left:20px;display:grid;gap:6px}
 .foot b{color:var(--ink)}
+.by{margin:4px 0 0;font-size:.88rem;color:var(--muted)}
+.help.warn{margin-top:10px;border-left:4px solid #b8860b;background:#fbf3dc}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
 @media (max-width:520px){.tab{padding:9px 10px}}
 </style>
@@ -130,7 +132,8 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 <header class="top">
   <h1>Mapa de saberes similares</h1>
   <p class="lead">Explore los 2.637 saberes básicos de Primaria y ESO (Canarias), vea cuáles son similares entre ciclos, cursos y materias, y marque los que podrían compactarse con alumnado con altas capacidades.</p>
-  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y cópielos desde «Mi selección». Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar.</div>
+  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.1 · noviembre de 2026</p>
+  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y cópielos desde «Mi selección». Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar.</div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="t-exp" aria-selected="true" aria-controls="p-exp">Explorar saberes</button>
     <button class="tab" role="tab" id="t-cor" aria-selected="false" aria-controls="p-cor">Correspondencias</button>
@@ -162,6 +165,7 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 
 <section class="panel" id="p-cor" role="tabpanel" aria-labelledby="t-cor">
   <p class="lead">Aquí se ve qué saber corresponde a cuál en otros ciclos, cursos y materias, y con qué criterio de evaluación. Marque lo que se podría compactar desde cualquiera de las tres vistas.</p>
+  <div class="help warn"><b>Ojo con los criterios:</b> los decretos no vinculan cada saber con un criterio de evaluación. La vinculación que se muestra aquí es aproximada, por parecido de texto, y no es una correspondencia oficial. Contrástela con la programación didáctica.</div>
   <div class="seg" id="corMode" style="margin-top:12px">
     <button type="button" class="chip" data-mode="tema" aria-pressed="true">Por tema (conceptual)</button>
     <button type="button" class="chip" data-mode="sim" aria-pressed="false">Por similitud del texto</button>
@@ -191,6 +195,8 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
     <li><b>Marcas y notas:</b> se guardan únicamente en el navegador de cada persona y no se comparten entre usuarios ni entre dispositivos. Para conservarlas, cópienlas desde «Mi selección».</li>
     <li><b>Vinculación con los criterios de evaluación:</b> los decretos no relacionan cada saber con un criterio concreto. La herramienta muestra los criterios de la misma materia y nivel cuyo texto se parece más, y también el parecido entre saberes y entre criterios, calculado por similitud de texto. Es una ayuda orientativa y no sustituye la lectura del decreto ni la valoración del equipo docente.</li>
     <li><b>Tipografía:</b> la página carga sus fuentes desde Google Fonts. Si el sitio donde se aloje no permite recursos externos, se verá con una tipografía del sistema, sin más cambios.</li>
+    <li><b>Similar no significa redundante:</b> muchos saberes reaparecen a propósito, con mayor profundidad. Compactar exige siempre una evaluación previa del alumnado y el criterio profesional del equipo docente.</li>
+    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.1, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
   </ul>
 </footer>
 </div>
