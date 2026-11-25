@@ -163,28 +163,27 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 .how .gtab th{background:var(--accent-soft);color:var(--accent)}
 .how .note{font-size:.9rem;color:var(--muted);margin:8px 0 0}
 .how .avoid{margin:6px 0 0;padding-left:20px}.how .avoid li{margin:4px 0}
-</style>
+.help details.more{margin-top:6px}.help details.more summary{cursor:pointer;font-weight:600}.help details.more p{margin:8px 0 0}</style>
 </head>
 <body>
 <div class="wrap">
 <header class="top"><div class="hero">
   <h1>Mapa de saberes similares</h1>
   <p class="lead">Explore los 2.666 saberes básicos de Primaria y ESO (Canarias), vea cuáles son similares entre ciclos, cursos y materias, y marque los que podrían compactarse con alumnado con altas capacidades.</p>
-  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.5 · noviembre de 2026</p>
+  <p class="by">Elaborado por el Equipo Especializado en Altas Capacidades de Canarias · Versión 1.6 · noviembre de 2026</p>
   <div class="etapas" aria-label="Colores por etapa"><span class="et e1">Primaria</span><span class="et e2">Puente: 5.º-6.º y 1.º ESO</span><span class="et e3">ESO</span></div>
   </div>
-  <div class="help"><b>Cómo se usa:</b> filtre por tema, materia o nivel; en «Correspondencias» vea qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación; marque los candidatos y, desde «Mi selección», cópielos o descárguelos en Word, ODT o Excel. Es una herramienta orientativa: detecta parecido de texto y de tema, no equivalencia curricular. Compactar exige una evaluación previa del alumnado: esta herramienta solo señala dónde mirar. Para saber cómo hacerlo, consulte la pestaña «Cómo compactar».</div>
+  <div class="help"><b>Cómo se usa:</b> elija una materia y un ciclo o curso, marque los saberes que podrían compactarse y descárguelos desde «Mi selección» en Word, ODT o Excel.<details class="more"><summary>Más información</summary><p>En «Correspondencias» puede ver qué saber equivale a cuál entre niveles y materias, con su criterio de evaluación. La herramienta detecta parecido de texto y de tema, no equivalencia curricular, y solo señala dónde mirar: compactar exige una evaluación previa del alumnado. Para saber cómo hacerlo, consulte la pestaña «Cómo compactar».</p></details></div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="t-exp" aria-selected="true" aria-controls="p-exp">Explorar saberes</button>
     <button class="tab" role="tab" id="t-cor" aria-selected="false" aria-controls="p-cor">Correspondencias</button>
-    <button class="tab" role="tab" id="t-map" aria-selected="false" aria-controls="p-map">Mapa de temas</button>
     <button class="tab" role="tab" id="t-sel" aria-selected="false" aria-controls="p-sel">Mi selección<span class="badge-count" id="selCount">0</span></button>
     <button class="tab" role="tab" id="t-how" aria-selected="false" aria-controls="p-how">Cómo compactar</button>
   </div>
 </header>
 
 <section class="panel on" id="p-exp" role="tabpanel" aria-labelledby="t-exp">
-  <p class="lead" style="margin-bottom:12px">Busque saberes por palabra, tema, materia o ciclo/curso. En cada uno puede abrir «Antecedentes y continuaciones» para ver dónde reaparece algo similar y «Criterios de evaluación afines» para ver el criterio aproximado. Con «Marcar para compactar» lo añade a «Mi selección», desde donde podrá copiarlo o descargarlo en Word, ODT o Excel.</p>
+  <p class="lead" style="margin-bottom:12px">Busque por palabra o filtre por tema, materia y ciclo/curso. Abra «Antecedentes y continuaciones» para ver dónde reaparece algo similar.</p>
   <div class="filters">
     <div class="row">
       <div class="field" style="flex:2"><label for="q">Buscar en el texto del saber</label><input type="search" id="q" placeholder="Por ejemplo: agua, energía, puntuación"></div>
@@ -200,14 +199,14 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
       <button class="btn ghost" id="reset">Quitar filtros</button>
     </div>
   </div>
-  <div class="summary"><span><strong id="nRes">0</strong> saberes encontrados</span><span><span class="tag rep">Similar</span> aparece casi igual en otro lugar</span><span><span class="tag org">Origen</span> primera vez que aparece</span></div>
+  <div class="summary" id="sum"><span><strong id="nRes">0</strong> saberes encontrados</span><span><span class="tag rep">Similar</span> aparece casi igual en otro lugar</span><span><span class="tag org">Origen</span> primera vez que aparece</span></div>
   <div class="list" id="list"></div>
   <div style="text-align:center;margin-top:14px"><button class="btn" id="more" hidden>Mostrar más</button></div>
 </section>
 
 <section class="panel" id="p-cor" role="tabpanel" aria-labelledby="t-cor">
   <p class="lead">Aquí se ve qué saber corresponde a cuál en otros ciclos, cursos y materias, y con qué criterio de evaluación. Marque lo que se podría compactar desde cualquiera de las tres vistas.</p>
-  <div class="help warn"><b>Ojo con los criterios:</b> los decretos no vinculan cada saber con un criterio de evaluación. La vinculación que se muestra aquí es aproximada, por parecido de texto, y no es una correspondencia oficial. Contrástela con la programación didáctica.</div>
+  <div class="help warn"><b>Ojo:</b> la vinculación con los criterios es aproximada (parecido de texto), no oficial.</div>
   <details class="help eqv" style="margin-top:12px"><summary>Equivalencia oficial de áreas y materias (Primaria ↔ ESO)</summary>
     <p style="margin:8px 0 0">Según el documento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación «Equivalencia de las áreas y materias de Educación Infantil, Educación Primaria y Educación Secundaria Obligatoria a tener en cuenta en la realización de Adaptaciones Curriculares».</p>
     <table><thead><tr><th>Área de Educación Primaria</th><th>Materias de ESO que le corresponden</th></tr></thead><tbody>
@@ -231,10 +230,6 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
   <div id="corOut" style="margin-top:14px"></div>
 </section>
 
-<section class="panel" id="p-map" role="tabpanel" aria-labelledby="t-map">
-  <p class="lead">Número de saberes que mencionan cada tema en cada ciclo o curso. Pulse una cifra para ver esos saberes. Los temas presentes en 5 o más niveles se retoman en espiral y son los mejores lugares donde buscar contenidos para compactar.</p>
-  <div class="tablewrap" style="margin-top:12px"><table class="heat" id="heat"></table></div>
-</section>
 
 <section class="panel how" id="p-how" role="tabpanel" aria-labelledby="t-how">
   <p class="lead" style="margin-bottom:12px">Compactar es sustituir los contenidos que el alumnado ya domina por propuestas de enriquecimiento o profundización, sin recortar lo que aún no domina. Esta guía breve resume el procedimiento de compactación del currículo (Reis y Renzulli) y es orientativa: la decisión corresponde al equipo docente, con el apoyo de orientación.</p>
@@ -290,7 +285,7 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
 </section>
 
 <section class="panel" id="p-sel" role="tabpanel" aria-labelledby="t-sel">
-  <p class="lead" style="margin-bottom:12px">Aquí aparecen los saberes que ha marcado, agrupados por materia. Puede añadir una nota a cada uno y copiar o descargar la selección en Word, ODT o Excel. Las marcas y notas se guardan solo en este navegador.</p>
+  <p class="lead" style="margin-bottom:12px">Saberes marcados, por materia. Añada notas y descárguelos o cópielos. Las marcas se guardan solo en este navegador.</p>
   <div class="row" style="margin-bottom:10px">
     <button class="btn primary" id="dlDoc">Descargar documento (Word)</button>
     <button class="btn primary" id="dlOdt">Descargar documento (ODT)</button>
@@ -310,7 +305,7 @@ table.heat{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
     <li><b>Tipografía:</b> la página carga sus fuentes desde Google Fonts. Si el sitio donde se aloje no permite recursos externos, se verá con una tipografía del sistema, sin más cambios.</li>
     <li><b>Similar no significa redundante:</b> muchos saberes reaparecen a propósito, con mayor profundidad. Compactar exige siempre una evaluación previa del alumnado y el criterio profesional del equipo docente.</li>
     <li><b>Equivalencia de áreas y materias:</b> la correspondencia entre áreas de Primaria y materias de ESO que se señala como «equivalencia oficial» procede del documento de la Dirección General de Ordenación de las Enseñanzas, Inclusión e Innovación sobre adaptaciones curriculares. Se usa solo para señalar y filtrar; no modifica el parecido de texto.</li>
-    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.5, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
+    <li><b>Autoría y versión:</b> Equipo Especializado en Altas Capacidades de Canarias. Versión 1.6, noviembre de 2026. Herramienta de apoyo, sin carácter normativo. Si se modifican los decretos, los datos pueden quedar desactualizados.</li>
   </ul>
 </footer>
 </div>
@@ -394,6 +389,9 @@ function card(it){
   return h+'</article>';
 }
 function render(){
+  var anyF=state.q||state.tema!==''||state.area!==''||state.rep||state.ant||Object.keys(state.niv).some(function(k){return state.niv[k]});
+  if(!anyF&&!state.all){$('sum').style.display='none';$('list').innerHTML='<div class="empty">Elija una materia o un ciclo/curso, o escriba una palabra, para ver los saberes.<br><button class="btn" id="showAll" type="button" style="margin-top:12px">Ver los '+ITEMS.length.toLocaleString('es-ES')+' saberes</button></div>';$('more').hidden=true;return}
+  $('sum').style.display='';
   var res=ITEMS.filter(match);
   if(state.ord==='rep') res.sort(function(a,b){return (b.r-a.r)||(a.i-b.i)});
   $('nRes').textContent=res.length.toLocaleString('es-ES');
@@ -403,6 +401,7 @@ function render(){
   $('more').hidden=res.length<=state.limit;
 }
 document.addEventListener('click',function(e){
+  if(e.target.id==='showAll'){state.all=true;render();return}
   var p=e.target.closest('[data-pick]'); if(p){togglePick(parseInt(p.getAttribute('data-pick'),10));return}
   var t=e.target.closest('[data-tema]'); if(t){state.tema=t.getAttribute('data-tema');sT.value=state.tema;state.limit=40;showTab('exp');render();window.scrollTo({top:0,behavior:'smooth'})}
 });
@@ -410,35 +409,6 @@ function setPick(id,on){if(on){if(!sel.hasOwnProperty(id))sel[id]=''}else delete
 function togglePick(id){setPick(id,!sel.hasOwnProperty(id));save();refreshAll()}
 function refreshAll(){updCount();render();renderSel();corRender()}
 function updCount(){$('selCount').textContent=Object.keys(sel).length}
-
-// ---- mapa de temas
-function buildHeat(){
-  var cnt=TEMAS.map(function(){return NIV.map(function(){return 0})});
-  ITEMS.forEach(function(it){it.th.forEach(function(t){cnt[t][it.n]++})});
-  var max=0;cnt.forEach(function(r){r.forEach(function(v){if(v>max)max=v})});
-  var h='<thead><tr><th style="text-align:left">Tema</th>'+NIV.map(function(n){return '<th>'+esc(n)+'</th>'}).join('')+'<th>Niveles</th></tr></thead><tbody>';
-  catNames.forEach(function(c){
-    h+='<tr class="cat"><td colspan="'+(NIV.length+2)+'">'+esc(c)+'</td></tr>';
-    TEMAS.forEach(function(t,ti){ if(t.cat!==c) return;
-      var present=cnt[ti].filter(function(v){return v>0}).length;
-      h+='<tr><td class="name">'+esc(t.nombre)+'</td>';
-      cnt[ti].forEach(function(v,ni){
-        if(!v){h+='<td class="cell z">·</td>';return}
-        var a=0.12+0.68*Math.sqrt(v/max);
-        h+='<td class="cell" data-t="'+ti+'" data-n="'+ni+'" style="background:rgba(14,107,102,'+a.toFixed(2)+');color:'+(a>0.5?'#fff':'inherit')+'" tabindex="0" role="button" aria-label="'+esc(t.nombre)+', '+esc(NIV[ni])+': '+v+' saberes">'+v+'</td>'});
-      h+='<td>'+(present>=5?'<span class="spiral">'+present+' de 7 · espiral</span>':present+' de 7')+'</td></tr>';
-    });
-  });
-  $('heat').innerHTML=h+'</tbody>';
-}
-function goCell(td){
-  var t=td.getAttribute('data-t'),n=td.getAttribute('data-n'); if(t===null)return;
-  resetFilters(); state.tema=t; sT.value=t; state.niv[n]=true;
-  Array.prototype.forEach.call(cn.children,function(b,i){b.setAttribute('aria-pressed',i===parseInt(n,10)?'true':'false')});
-  showTab('exp'); render(); window.scrollTo({top:0});
-}
-$('heat').addEventListener('click',function(e){var td=e.target.closest('td.cell');if(td)goCell(td)});
-$('heat').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var td=e.target.closest('td.cell');if(td){e.preventDefault();goCell(td)}}});
 
 // ---- selección
 function selItems(){return Object.keys(sel).map(function(k){return ITEMS[parseInt(k,10)]}).sort(function(a,b){return (a.a-b.a)||(a.n-b.n)||(a.i-b.i)})}
@@ -556,9 +526,9 @@ $('dlOdt').onclick=function(){var arr=selItems();if(!arr.length){toast('No hay s
   catch(e){toast('No se pudo crear el ODT: use el de Word o copie el texto')}};
 
 // ---- pestañas
-function showTab(k){['exp','cor','map','sel','how'].forEach(function(x){var on=x===k;$('p-'+x).classList.toggle('on',on);$('t-'+x).setAttribute('aria-selected',on?'true':'false')});
+function showTab(k){['exp','cor','sel','how'].forEach(function(x){var on=x===k;$('p-'+x).classList.toggle('on',on);$('t-'+x).setAttribute('aria-selected',on?'true':'false')});
   if(k==='sel')renderSel(); if(k==='cor')corRender()}
-['exp','cor','map','sel','how'].forEach(function(k){$('t-'+k).onclick=function(){showTab(k)}});
+['exp','cor','sel','how'].forEach(function(k){$('t-'+k).onclick=function(){showTab(k)}});
 
 
 var cor={mode:'tema',tema:'',area:'',th:0.88,lim:25,eq:false,exp:{}};
@@ -654,7 +624,7 @@ document.addEventListener('click',function(e){
   var gp=e.target.closest('[data-grouppick]'); if(gp){gp.getAttribute('data-grouppick').split(',').forEach(function(i){setPick(parseInt(i,10),true)});save();refreshAll();toast('Grupo marcado');}
 });
 corControls();
-buildHeat(); updCount(); render(); renderSel();
+updCount(); render(); renderSel();
 })();
 </script>
 </body>
